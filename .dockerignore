@@ -1,0 +1,42 @@
+# Git
+.git
+.gitignore
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
+CHANGELOG.md
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Monitoring (will be mounted as volumes)
+monitoring/
+
+# Database (optional, can be mounted)
+*.sql
+
+# Test files
+src/test/

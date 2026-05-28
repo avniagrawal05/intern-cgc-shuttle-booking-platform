@@ -1,0 +1,51 @@
+# Test configuration
+spring:
+  application:
+    name: Hospital Management System Test
+  
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+  
+  # Disable Redis for tests
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  
+  cache:
+    type: simple
+
+# Disable security for tests
+security:
+  enabled: false
+
+# Logging
+logging:
+  level:
+    root: WARN
+    com.hms: DEBUG
+    org.springframework.test: INFO
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
